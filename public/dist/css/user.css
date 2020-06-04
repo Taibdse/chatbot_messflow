@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+@media (min-width: 1400px) {
+	body{
+		font-size: 17px !important;
+	}
+	div.dataTables_filter input {
+	    width: 300px !important;
+	}
+	.form-control{
+		font-size: 17px;
+	}
+}
+@media (max-width: 1399px) {
+	body{
+		font-size: 17px !important;
+	}
+}
+
+
+#main-table
+{
+	min-height: 184px;
+}
+
+#mns-table
+{
+	visibility: hidden;
+}
+
+#loader{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 999999;
+	text-align: center;
+}
+
+.request-item {
+	color: red;
+}
+
+.error-msg {
+	color: red;
+}
+
+.left-menu {
+    padding-top: 50px;
+}
+
+.panel {
+    border-color: #ddd;
+    color: #333;
+    margin: 5px 5px 5px 5px;
+}
+
+.content-header-text {
+    margin: 0 0 10px 10px;
+}
+
+.btn {
+    position: relative;
+    border-radius: 10px;
+}
+
+.addRule {
+	margin: 0px 0px 0px 5px;
+}
+
+.saveRule {
+	margin: 0px 5px 0px 0px;
+}
+
+.addAnswer {
+	margin: 5px 0px 0px 0px;
+}
+
+.topic-des {
+	padding: 10px 10px;
+	height: 100px;
+}
+
+.bg-gray92 {
+	background-color:#EBEBEB !important
+}
+
+.template-img {
+    border: 1px solid #ddd;
+    border-radius: 1px;
+    padding: 1px;
+    max-height: 100px;
+    max-height: 100px;
+}

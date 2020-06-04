@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/head %>
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <% include ../partials/header %>
+  <% include ../partials/menus %>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+      <div class="panel panel-flat">
+        
+        <div class="panel-body">
+          <div class="row">
+            
+            
+            <button type="button" class="btn btn-success addRule" onclick="reset()"><i class="icon-add position-left"></i> Reset</button>
+            <button type="button" class="btn btn-primary pull-right saveRule" onclick="sendData()"><i class="icon-floppy-disk position-left" ></i>Save</button>
+          </div>
+        </div>
+      </div>
+      <% var data = {} %>
+      <div class="panel panel-flat" indexpanel="3">
+                <div class="panel-body">
+                  <i class="icon-bin rmCt" style="display: inline;"></i>
+                  <div class="wrMove">
+                    <i class="icon-arrow-up13 moveTop" style="display: inline;"></i>
+                    <i class="icon-arrow-down132 moveBot" style="display: inline;"></i>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <label>User says similar to:  <span class="request-item">*</span></label> <span id="error-user_say" name="error-user_say"  class="error-msg"></span>
+                      <div class="input-group" id="inputdiv">
+                        <input id="user_say" type="text" class="tags" value="<%=data.user_say%>"/>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <label>Bot replies with</label>
+                      <label>
+                          <input id="random" type="checkbox" class="js-switch" checked onClick="onOffRandom(this)"/> 
+                          Random
+                        </label>
+                      <form role="form" id="form_answers" method="POST" action="/save"> 
+                        <span id="error-answer" name="error-answer"  class="error-msg"></span>
+
+                        <p>
+                          
+                         <!-- ejs here -->
+                        </p>
+
+                        <input type="hidden" id="id" name="id" value="<%=data.id%>">
+                      </form>
+                      <button type="" class="btn btn-success addAnswer" id="btn_answer_1"  onclick="addNewAnswerTextbox()"><i class="icon-plus22"></i> Add Answer</button>
+                    </div>
+                  </div>
+                </div> 
+              </div>
+        
+  <div class="panel panel-flat" indexpanel="4">
+        <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Content Table</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body table-responsive no-padding">
+              <table class="table table-hover" id="table">
+                
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+      </div>
+        <!-- /.row -->
+        
+      </div>
+  </div>
+  <script type="text/javascript">
+    var elem = document.querySelector('.js-switch');
+    var init = new Switchery(elem);
+
+    defaults = {
+        color             : '#64bd63'
+      , secondaryColor    : '#dfdfdf'
+      , jackColor         : '#fff'
+      , jackSecondaryColor: null
+      , className         : 'switchery'
+      , disabled          : false
+      , disabledOpacity   : 0.5
+      , speed             : '0.1s'
+      , size              : 'default'
+      , defaultText       :'add something'
+      , width             :'auto'
+    }
+
+    
+
+    $( document ).ready(function() {
+
+      $('#user_say').tagsInput(defaults);
+      showData();
+    });
+
+  </script>
+  <% include ../partials/footer %>
+  <script src="/dist/js/pages/content.js"></script>
+</body>
+</html>
